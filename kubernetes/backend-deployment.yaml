@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: spotnik-backend
+        image: eu.gcr.io/spotnik-245915/spotnik-backend:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: SPOTIFY_APP_ID
+          value: 
+        - name: SPOTIFY_APP_SECRET
+          value: 
+        - name: REDIRECT_HOST
+          value: 
+        - name: REDIS_HOST
+          value: redis-service
+        - name: ADMIN_USERNAME
+          value: 
+        - name: ADMIN_PASSWORD
+          value: 

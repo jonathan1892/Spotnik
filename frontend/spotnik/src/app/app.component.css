@@ -1,0 +1,25 @@
+.nav-item .active {
+	font-weight: bold !important;
+}
+
+.app-wrapper {
+	max-width: 550px;
+	padding: 10px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-bottom: 40px;
+}
+
+a {
+	color: white;
+}
+
+#footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}

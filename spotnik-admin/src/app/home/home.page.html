@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>
+      Spotnik Admin Panel
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="isBackendReachable && hasAccessToken" color="success">
+		<ion-title>Up & Running</ion-title>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="isBackendReachable && !hasAccessToken" color="warning">
+		<ion-title>Logged Out</ion-title>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="!isBackendReachable && !hasAccessToken" color="danger">
+		<ion-title>Unreachable</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card>
+	<ion-card-header>
+    <ion-card-title>Authentication</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content class="center-ion-card-content">
+		<ion-button fill="outline" expand="full" class="stretch" (click)="logIn()">Log In</ion-button>
+		<ion-button fill="outline" expand="full" class="stretch" (click)="logOut()">Log Out</ion-button>
+	</ion-card-content>
+</ion-card>
+
+<ion-card>
+	<ion-card-header>
+    <ion-card-title>Player</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-button expand="full" fill="outline" (click)="skipSong()">Next Song</ion-button>
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+	<ion-card-header>
+    <ion-card-title>Fallback Playlist</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+		 <ion-input type="text" [(ngModel)]="playlistUri"></ion-input>
+		 <ion-button expand="full" fill="outline" (click)="queuePlaylist()">Queue Playlist</ion-button>
+    <ion-button expand="full" fill="outline" (click)="clearPlaylist()">Clear Playlist</ion-button>
+  </ion-card-content>
+</ion-card>

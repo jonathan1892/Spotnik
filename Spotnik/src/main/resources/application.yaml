@@ -1,0 +1,8 @@
+spotnik:
+  spotify-app-id: ${SPOTIFY_APP_ID}
+  spotify-app-secret: ${SPOTIFY_APP_SECRET}
+  redirect-uri: "${REDIRECT_HOST}/authorize"
+  redis-host: ${REDIS_HOST:redis}
+  redis-port: ${REDIS_PORT:6379}
+  admin-username: ${ADMIN_USERNAME:CHANGE_ME}
+  admin-password: ${ADMIN_PASSWORD:CHANGE_ME_TOO}

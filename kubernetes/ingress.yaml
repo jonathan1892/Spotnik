@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    ingress.kubernetes.io/backends: '{"k8s-be-31119--24c57bfccbf7ee3d":"Unknown","k8s-be-31609--24c57bfccbf7ee3d":"Unknown"}'
+    ingress.kubernetes.io/forwarding-rule: k8s-fw-default-spotnik-ingress--24c57bfccbf7ee3d
+    ingress.kubernetes.io/target-proxy: k8s-tp-default-spotnik-ingress--24c57bfccbf7ee3d
+    ingress.kubernetes.io/url-map: k8s-um-default-spotnik-ingress--24c57bfccbf7ee3d
+  creationTimestamp: "2019-07-19T01:06:03Z"
+  generation: 5
+  name: spotnik-ingress
+  namespace: default
+  resourceVersion: "18955566"
+  selfLink: /apis/extensions/v1beta1/namespaces/default/ingresses/spotnik-ingress
+  uid: 610ca393-a9c1-11e9-a25a-42010aa60024
+spec:
+  backend:
+    serviceName: frontend-service
+    servicePort: 80
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: backend-service
+          servicePort: 80
+        path: /admin/*
+      - backend:
+          serviceName: backend-service
+          servicePort: 80
+        path: /api/*
+      - backend:
+          serviceName: backend-service
+          servicePort: 80
+        path: /authorize
+status:
+  loadBalancer:
+    ingress:
+    - ip: 35.190.56.175

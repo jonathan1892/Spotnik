@@ -1,0 +1,22 @@
+runtime: custom
+env: flex
+
+threadsafe: true
+
+resources:
+  cpu: 2
+  memory_gb: 2
+  disk_size_gb: 10
+
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 1
+
+env_variables:
+  SPOTIFY_APP_ID: 
+  SPOTIFY_APP_SECRET: 
+  REDIRECT_HOST:
+
+network:
+  forwarded_ports:
+    - 80:8080

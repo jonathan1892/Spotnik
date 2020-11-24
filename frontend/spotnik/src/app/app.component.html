@@ -1,0 +1,28 @@
+<nav class="navbar navbar-dark bg-dark sticky-top">
+  <span class="navbar-brand mb-0 h1">
+    <img src="./assets/icon.png" width="30" height="30" class="d-inline-block align-top" alt="" style="margin-right: 5px">
+    Spotnik
+  </span>
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+true}">Add to Queue</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/queue']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+true}">See Playlist</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="app-wrapper">
+  <app-health-alert></app-health-alert>
+  <app-playing></app-playing>
+  <router-outlet></router-outlet>
+</div>
+
+<footer id="footer" class="py-1 bg-dark text-white-50">
+    <div class="container text-center">
+      <small><a href="https://forms.gle/6GZJY489YDKKVxr66">Provide Feedback</a></small>
+    </div>
+</footer>

@@ -1,0 +1,21 @@
+.wrapper {
+	margin-bottom: 30px;
+}
+
+li {
+	margin-bottom: 25px;
+}
+
+h4 {
+	margin-bottom: 15px;
+}
+
+.list-group-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.secondary-track-info {
+	font-size: 80%;
+}

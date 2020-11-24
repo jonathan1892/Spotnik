@@ -1,0 +1,25 @@
+.queue-title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 15px;
+}
+
+.playlist-title {
+	margin-top: 30px;
+}
+
+.spinner {
+	margin-bottom: 6px;
+}
+
+.list-group-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.secondary-track-info {
+	font-style: italic;
+	font-size: 80%;
+}

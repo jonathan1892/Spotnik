@@ -1,0 +1,36 @@
+<div class="queue-title">
+	<h4>Next From Queue</h4> 
+	<div class="spinner">
+		<div class="countdown-to-reload" *ngIf="!isLoadingTracks">{{countdownToReload}}</div>
+		<div *ngIf="isLoadingTracks" class="spinner-border ml-auto spinner-border-sm" role="status" aria-hidden="true"></div>
+	</div>
+</div>
+
+<div *ngIf="queueDescription.queue.items.length==0">No tracks to play!</div>
+
+<ul class="list-group">
+	<li class="list-group-item" *ngFor="let track of queueDescription.queue.items">
+		<div class="track-info">
+			<h5>{{track.track.trackName}}</h5>
+			<div>{{track.track.artists}} • {{track.track.albumName}}</div>
+			<div class="secondary-track-info">~{{track.timeBeforePlaying | roundToNearest:5 | minuteSeconds}} before playing</div>
+		</div>
+	</li>
+</ul>
+
+
+<div *ngIf="queueDescription.playlist.items.length!=0">
+	<div class="queue-title playlist-title">
+		<h4>Next From "{{queueDescription.playlist.name}}"</h4>
+	</div>
+
+	<ul class="list-group">
+		<li class="list-group-item" *ngFor="let track of queueDescription.playlist.items">
+			<div class="track-info">
+				<h5>{{track.track.trackName}}</h5>
+				<div>{{track.track.artists}} • {{track.track.albumName}}</div>
+				<div class="secondary-track-info">~{{track.timeBeforePlaying | roundToNearest:5 | minuteSeconds}} before playing</div>
+			</div>
+		</li>
+	</ul>
+</div>

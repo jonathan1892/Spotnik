@@ -1,0 +1,13 @@
+.center-ion-card-content {
+	display: flex;
+	justify-content: space-evenly;
+	align-content: stretch;
+}
+
+.center-ion-card-content .stretch {
+	flex: 1;
+}
+
+ion-card-header {
+	text-align: center;
+}

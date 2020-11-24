@@ -1,0 +1,37 @@
+<h4>Add To Queue</h4>
+
+<div class="input-group">
+  <input class="form-control" #query type="search" name="search-track" (keyup.enter)="performSearch(query.value)" query.value='' placeholder="Search for a track by album, artist, or name...">
+  <div class="input-group-append">
+  	<button class="btn btn-outline-secondary" type="submit" (click)="performSearch(query.value)">Search</button>
+  </div>
+</div>
+
+<div class="search-spinner text-center" *ngIf="performingSearch">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+<ul class="list-group search-results">
+  <li *ngFor="let searchResult of searchResults" (click)="queueSearchResult(searchResult)" class="list-group-item">
+  	<div>
+  		<h5>{{searchResult.track.trackName}}</h5>
+			<div><b>{{searchResult.track.artists}}</b> on <i>{{searchResult.track.albumName}}</i></div>
+  	</div>
+  	<div class="search-result-status">
+  		<div *ngIf="searchResult.adding">
+	  		<div class="d-flex align-items-center">
+				  Adding to playlist...
+				  <div class="spinner-border ml-auto spinner-border-sm" role="status" aria-hidden="true"></div>
+				</div>
+	  	</div>
+	  	<div *ngIf="searchResult.added" class="search-result-added">
+	  		<div>
+				  Added to playlist! 
+				</div>
+				<div class="checkmark">✓</div>
+	  	</div>
+  	</div>
+  </li>
+</ul>

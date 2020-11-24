@@ -1,0 +1,23 @@
+version: '3'
+services:
+  frontend:
+    image: "spotnik-frontend"
+    ports:
+      - "80:80"
+  backend:
+    image: "spotnik-backend"
+    environment:
+      - SPOTIFY_APP_ID=
+      - SPOTIFY_APP_SECRET=
+      - REDIRECT_HOST=
+      - ADMIN_USERNAME=admin
+      - ADMIN_PASSWORD=admin
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+  redis:
+    image: redis
+    command: [ "redis-server", "--protected-mode", "no" ]
+    ports:
+      - "6379:6379"

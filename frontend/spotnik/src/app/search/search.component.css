@@ -1,0 +1,36 @@
+li {
+	cursor: pointer;
+}
+
+.search-spinner {
+	margin-top: 30px;
+}
+
+.search-results {
+	margin-top: 15px;
+}
+
+.search-results li:hover {
+	background-color: #343a40 !important;	
+	color: #f8f9fa !important;
+}
+
+.search-result-status {
+	margin-top: 5px;
+	color: #bfbfbf;
+}
+
+.checkmark {
+	margin-left: 5px; 
+	font-weight: bold;
+}
+
+.search-result-added {
+	display: flex;
+	justify-content: space-between;
+}
+
+.alert {
+	min-width: 100%;
+	margin-left: 10px;
+}

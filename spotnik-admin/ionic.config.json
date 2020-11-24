@@ -1,0 +1,7 @@
+{
+  "name": "spotnik-admin",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

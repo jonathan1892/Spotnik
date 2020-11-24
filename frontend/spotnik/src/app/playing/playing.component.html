@@ -1,0 +1,22 @@
+<div class="wrapper">
+	<h4>Playing Now</h4>
+
+	<ul class="list-group" *ngIf="currentlyPlaying">
+		<li class="list-group-item bg-dark text-light">
+			<div class="track-info">
+				<h5>{{currentlyPlaying.track.trackName}}</h5>
+				<div>{{currentlyPlaying.track.artists}} • {{currentlyPlaying.track.albumName}}</div>
+				<div *ngIf="currentlyPlaying.timeLeft>0" class="secondary-track-info">
+					<i>-{{currentlyPlaying.timeLeft | minuteSeconds}}</i>
+				</div>
+			</div>
+			<div class="track-cover">
+				<img src="{{currentlyPlaying.track.coverUrl}}" class="rounded" height="64" width="64"/>
+			</div>
+		</li>
+	</ul>
+
+	<div *ngIf="!currentlyPlaying">
+		<p>No Active Tracks</p>
+	</div>
+</div>
